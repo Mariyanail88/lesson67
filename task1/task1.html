@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notification Example</title>
     <style>
-        /* Стили для уведомлений */
+
         .notification {
             position: fixed;
-            bottom: 20px;
+            top: 20px;
             right: 20px;
-            background-color: #f8d7da;
-            color: #721c24;
+            background-color: #d3d3d3;
+            color: #000000;
             padding: 15px;
-            border: 1px solid #f5c6cb;
+            border: 1px solid #a9a9a9;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
@@ -21,10 +21,27 @@
         .notification .close-btn {
             background: none;
             border: none;
-            color: #721c24;
+            color: #000000;
             font-size: 16px;
             cursor: pointer;
             margin-left: 10px;
+        }
+
+        #add-item-btn {
+            position: relative;
+            top: 40px;
+            left: 40px;
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: none;
+            border-radius: 5px;
+            background-color: initial;
+            color: initial;
+        }
+        #add-item-btn:hover {
+            background-color: initial;
         }
     </style>
 </head>
@@ -35,7 +52,7 @@
 
 <script>
     document.getElementById('add-item-btn').addEventListener('click', function() {
-        // Создаем новое уведомление
+
         const notification = document.createElement('div');
         notification.className = 'notification';
         notification.innerHTML = `
@@ -43,15 +60,13 @@
                 <button class="close-btn">Закрыть</button>
             `;
 
-        // Добавляем уведомление в контейнер
+
         document.body.appendChild(notification);
 
-        // Добавляем обработчик для кнопки "Закрыть"
         notification.querySelector('.close-btn').addEventListener('click', function() {
             notification.remove();
         });
 
-        // Запускаем таймер на 5 секунд для автоматического удаления уведомления
         setTimeout(function() {
             notification.remove();
         }, 5000);
