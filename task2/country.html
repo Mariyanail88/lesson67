@@ -38,6 +38,15 @@
             padding: 5px 10px;
             border-radius: 4px;
         }
+        .border-button {
+            background-color: #d3d3d3;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -53,749 +62,757 @@
 
         const translations = {
             "Malawi": {
-            "name": "Малави",
+                "name": "Малави",
                 "capital": "Лилонгве",
                 "currency": "MWK",
-                "borders": ["MOZ", "TZA", "ZMB"]
-        },
+                "borders": ["Mozambique", "Tanzania", "Zambia"]
+            },
             "Malaysia": {
-            "name": "Малайзия",
+                "name": "Малайзия",
                 "capital": "Куала-Лумпур",
                 "currency": "MYR",
-                "borders": ["BRN", "IDN", "THA"]
-        },
+                "borders": ["Brunei", "Indonesia", "Thailand"]
+            },
             "Maldives": {
-            "name": "Мальдивы",
+                "name": "Мальдивы",
                 "capital": "Мале",
                 "currency": "MVR",
                 "borders": []
-        },
+            },
             "Mali": {
-            "name": "Мали",
+                "name": "Мали",
                 "capital": "Бамако",
                 "currency": "XOF",
-                "borders": ["DZA", "BFA", "GIN", "CIV", "MRT", "NER", "SEN"]
-        },
+                "borders": ["Algeria", "Burkina Faso", "Guinea", "Ivory Coast", "Mauritania", "Niger", "Senegal"]
+            },
             "Malta": {
-            "name": "Мальта",
+                "name": "Мальта",
                 "capital": "Валлетта",
                 "currency": "EUR",
                 "borders": []
-        },
+            },
             "Marshall Islands": {
-            "name": "Маршалловы Острова",
+                "name": "Маршалловы Острова",
                 "capital": "Маджуро",
                 "currency": "USD",
                 "borders": []
-        },
+            },
             "Martinique": {
-            "name": "Мартиника",
+                "name": "Мартиника",
                 "capital": "Фор-де-Франс",
                 "currency": "EUR",
                 "borders": []
-        },
+            },
             "Mauritania": {
-            "name": "Мавритания",
+                "name": "Мавритания",
                 "capital": "Нуакшот",
                 "currency": "MRU",
-                "borders": ["DZA", "MLI", "SEN", "ESH"]
-        },
+                "borders": ["Algeria", "Mali", "Senegal", "Western Sahara"]
+            },
             "Mauritius": {
-            "name": "Маврикий",
+                "name": "Маврикий",
                 "capital": "Порт-Луи",
                 "currency": "MUR",
                 "borders": []
-        },
+            },
             "Mayotte": {
-            "name": "Майотта",
+                "name": "Майотта",
                 "capital": "Мамудзу",
                 "currency": "EUR",
                 "borders": []
-        },
+            },
             "Mexico": {
-            "name": "Мексика",
+                "name": "Мексика",
                 "capital": "Мехико",
                 "currency": "MXN",
-                "borders": ["BLZ", "GTM", "USA"]
-        },
+                "borders": ["Belize", "Guatemala", "United States"]
+            },
             "Micronesia": {
-            "name": "Микронезия",
+                "name": "Микронезия",
                 "capital": "Паликир",
                 "currency": "USD",
                 "borders": []
-        },
+            },
             "Moldova": {
-            "name": "Молдова",
+                "name": "Молдова",
                 "capital": "Кишинев",
                 "currency": "MDL",
-                "borders": ["ROU", "UKR"]
-        },
+                "borders": ["Romania", "Ukraine"]
+            },
             "Monaco": {
-            "name": "Монако",
+                "name": "Монако",
                 "capital": "Монако",
                 "currency": "EUR",
-                "borders": ["FRA"]
-        },
+                "borders": ["France"]
+            },
             "Mongolia": {
-            "name": "Монголия",
+                "name": "Монголия",
                 "capital": "Улан-Батор",
                 "currency": "MNT",
-                "borders": ["CHN", "RUS"]
-        },
+                "borders": ["China", "Russia"]
+            },
             "Montenegro": {
-            "name": "Черногория",
+                "name": "Черногория",
                 "capital": "Подгорица",
                 "currency": "EUR",
-                "borders": ["ALB", "BIH", "HRV", "KOS", "SRB"]
-        },
+                "borders": ["Albania", "Bosnia and Herzegovina", "Croatia", "Kosovo", "Serbia"]
+            },
             "Montserrat": {
-            "name": "Монтсеррат",
+                "name": "Монтсеррат",
                 "capital": "Плимут",
                 "currency": "XCD",
                 "borders": []
-        },
+            },
             "Morocco": {
-            "name": "Марокко",
+                "name": "Марокко",
                 "capital": "Рабат",
                 "currency": "MAD",
-                "borders": ["DZA", "ESH"]
-        },
+                "borders": ["Algeria", "Western Sahara"]
+            },
             "Mozambique": {
-            "name": "Мозамбик",
+                "name": "Мозамбик",
                 "capital": "Мапуту",
                 "currency": "MZN",
-                "borders": ["MWI", "ZAF", "SWZ", "TZA", "ZMB", "ZWE"]
-        },
+                "borders": ["Malawi", "South Africa", "Eswatini", "Tanzania", "Zambia", "Zimbabwe"]
+            },
             "Myanmar": {
-            "name": "Мьянма",
+                "name": "Мьянма",
                 "capital": "Нейпьидо",
                 "currency": "MMK",
-                "borders": ["BGD", "CHN", "IND", "LAO", "THA"]
-        },
+                "borders": ["Bangladesh", "China", "India", "Laos", "Thailand"]
+            },
             "Namibia": {
-            "name": "Намибия",
+                "name": "Намибия",
                 "capital": "Виндхук",
                 "currency": "NAD",
-                "borders": ["AGO", "BWA", "ZAF", "ZMB"]
-        },
+                "borders": ["Angola", "Botswana", "South Africa", "Zambia"]
+            },
             "Nauru": {
-            "name": "Науру",
+                "name": "Науру",
                 "capital": "Ярен",
                 "currency": "AUD",
                 "borders": []
-        },
+            },
             "Nepal": {
-            "name": "Непал",
+                "name": "Непал",
                 "capital": "Катманду",
                 "currency": "NPR",
-                "borders": ["CHN", "IND"]
-        },
+                "borders": ["China", "India"]
+            },
             "Netherlands": {
-            "name": "Нидерланды",
+                "name": "Нидерланды",
                 "capital": "Амстердам",
                 "currency": "EUR",
-                "borders": ["BEL", "DEU"]
-        },
+                "borders": ["Belgium", "Germany"]
+            },
             "New Caledonia": {
-            "name": "Новая Каледония",
+                "name": "Новая Каледония",
                 "capital": "Нумеа",
                 "currency": "XPF",
                 "borders": []
-        },
+            },
             "New Zealand": {
-            "name": "Новая Зеландия",
+                "name": "Новая Зеландия",
                 "capital": "Веллингтон",
                 "currency": "NZD",
                 "borders": []
-        },
+            },
             "Nicaragua": {
-            "name": "Никарагуа",
+                "name": "Никарагуа",
                 "capital": "Манагуа",
                 "currency": "NIO",
-                "borders": ["CRI", "HND"]
-        },
+                "borders": ["Costa Rica", "Honduras"]
+            },
             "Niger": {
-            "name": "Нигер",
+                "name": "Нигер",
                 "capital": "Ниамей",
                 "currency": "XOF",
-                "borders": ["DZA", "BEN", "BFA", "TCD", "LBY", "MLI", "NGA"]
-        },
+                "borders": ["Algeria", "Benin", "Burkina Faso", "Chad", "Libya", "Mali", "Nigeria"]
+            },
             "Nigeria": {
-            "name": "Нигерия",
+                "name": "Нигерия",
                 "capital": "Абуджа",
                 "currency": "NGN",
-                "borders": ["BEN", "CMR", "TCD", "NER"]
-        },
+                "borders": ["Benin", "Cameroon", "Chad", "Niger"]
+            },
             "Niue": {
-            "name": "Ниуэ",
+                "name": "Ниуэ",
                 "capital": "Алофи",
                 "currency": "NZD",
                 "borders": []
-        },
+            },
             "Norfolk Island": {
-            "name": "Остров Норфолк",
+                "name": "Остров Норфолк",
                 "capital": "Кингстон",
                 "currency": "AUD",
                 "borders": []
-        },
+            },
             "North Korea": {
-            "name": "Северная Корея",
+                "name": "Северная Корея",
                 "capital": "Пхеньян",
                 "currency": "KPW",
-                "borders": ["CHN", "KOR", "RUS"]
-        },
+                "borders": ["China", "South Korea", "Russia"]
+            },
             "North Macedonia": {
-            "name": "Северная Македония",
+                "name": "Северная Македония",
                 "capital": "Скопье",
                 "currency": "MKD",
-                "borders": ["ALB", "BGR", "GRC", "KOS", "SRB"]
-        },
+                "borders": ["Albania", "Bulgaria", "Greece", "Kosovo", "Serbia"]
+            },
             "Northern Mariana Islands": {
-            "name": "Северные Марианские Острова",
+                "name": "Северные Марианские Острова",
                 "capital": "Сайпан",
                 "currency": "USD",
                 "borders": []
-        },
+            },
             "Norway": {
-            "name": "Норвегия",
+                "name": "Норвегия",
                 "capital": "Осло",
                 "currency": "NOK",
-                "borders": ["FIN", "SWE", "RUS"]
-        },
+                "borders": ["Finland", "Sweden", "Russia"]
+            },
             "Pakistan": {
-            "name": "Пакистан",
+                "name": "Пакистан",
                 "capital": "Исламабад",
                 "currency": "PKR",
-                "borders": ["AFG", "CHN", "IND", "IRN"]
-        },
+                "borders": ["Afghanistan", "China", "India", "Iran"]
+            },
             "Palau": {
-            "name": "Палау",
+                "name": "Палау",
                 "capital": "Нгерулмуд",
                 "currency": "USD",
                 "borders": []
-        },
+            },
             "Palestine": {
-            "name": "Палестина",
+                "name": "Палестина",
                 "capital": "Рамалла",
                 "currency": "ILS",
-                "borders": ["ISR", "EGY", "JOR"]
-        },
+                "borders": ["Israel", "Egypt", "Jordan"]
+            },
             "Panama": {
-            "name": "Панама",
+                "name": "Панама",
                 "capital": "Панама",
                 "currency": "PAB",
-                "borders": ["COL", "CRI"]
-        },
+                "borders": ["Colombia", "Costa Rica"]
+            },
             "Papua New Guinea": {
-            "name": "Папуа — Новая Гвинея",
+                "name": "Папуа — Новая Гвинея",
                 "capital": "Порт-Морсби",
                 "currency": "PGK",
-                "borders": ["IDN"]
-        },
+                "borders": ["Indonesia"]
+            },
             "Paraguay": {
-            "name": "Парагвай",
+                "name": "Парагвай",
                 "capital": "Асунсьон",
                 "currency": "PYG",
-                "borders": ["ARG", "BOL", "BRA"]
-        },
+                "borders": ["Argentina", "Bolivia", "Brazil"]
+            },
             "Peru": {
-            "name": "Перу",
+                "name": "Перу",
                 "capital": "Лима",
                 "currency": "PEN",
-                "borders": ["BOL", "BRA", "CHL", "COL", "ECU"]
-        },
+                "borders": ["Bolivia", "Brazil", "Chile", "Colombia", "Ecuador"]
+            },
             "Philippines": {
-            "name": "Филиппины",
+                "name": "Филиппины",
                 "capital": "Манила",
                 "currency": "PHP",
                 "borders": []
-        },
+            },
             "Pitcairn Islands": {
-            "name": "Острова Питкэрн",
+                "name": "Острова Питкэрн",
                 "capital": "Адамстаун",
                 "currency": "NZD",
                 "borders": []
-        },
+            },
             "Poland": {
-            "name": "Польша",
+                "name": "Польша",
                 "capital": "Варшава",
                 "currency": "PLN",
-                "borders": ["BLR", "CZE", "DEU", "LTU", "RUS", "SVK", "UKR"]
-        },
+                "borders": ["Belarus", "Czech Republic", "Germany", "Lithuania", "Russia", "Slovakia", "Ukraine"]
+            },
             "Portugal": {
-            "name": "Португалия",
+                "name": "Португалия",
                 "capital": "Лиссабон",
                 "currency": "EUR",
-                "borders": ["ESP"]
-        },
+                "borders": ["Spain"]
+            },
             "Puerto Rico": {
-            "name": "Пуэрто-Рико",
+                "name": "Пуэрто-Рико",
                 "capital": "Сан-Хуан",
                 "currency": "USD",
                 "borders": []
-        },
+            },
             "Qatar": {
-            "name": "Катар",
+                "name": "Катар",
                 "capital": "Доха",
                 "currency": "QAR",
-                "borders": ["SAU"]
-        },
+                "borders": ["Saudi Arabia"]
+            },
             "Republic of the Congo": {
-            "name": "Республика Конго",
+                "name": "Республика Конго",
                 "capital": "Браззавиль",
                 "currency": "XAF",
-                "borders": ["AGO", "CMR", "CAF", "COD", "GAB"]
-        },
+                "borders": ["Angola", "Cameroon", "Central African Republic", "Democratic Republic of the Congo", "Gabon"]
+            },
             "Réunion": {
-            "name": "Реюньон",
+                "name": "Реюньон",
                 "capital": "Сен-Дени",
                 "currency": "EUR",
                 "borders": []
-        },
+            },
             "Romania": {
-            "name": "Румыния",
+                "name": "Румыния",
                 "capital": "Бухарест",
                 "currency": "RON",
-                "borders": ["BGR", "HUN", "MDA", "SRB", "UKR"]
-        },
+                "borders": ["Bulgaria", "Hungary", "Moldova", "Serbia", "Ukraine"]
+            },
             "Russia": {
-            "name": "Россия",
+                "name": "Россия",
                 "capital": "Москва",
                 "currency": "RUB",
-                "borders": ["AZE", "BLR", "CHN", "EST", "FIN", "GEO", "KAZ", "PRK", "LVA", "LTU", "MNG", "NOR", "POL", "UKR"]
-        },
+                "borders": ["Azerbaijan", "Belarus", "China", "Estonia", "Finland", "Georgia", "Kazakhstan", "North Korea", "Latvia", "Lithuania", "Mongolia", "Norway", "Poland", "Ukraine"]
+            },
             "Rwanda": {
-            "name": "Руанда",
+                "name": "Руанда",
                 "capital": "Кигали",
                 "currency": "RWF",
-                "borders": ["BDI", "COD", "TZA", "UGA"]
-        },
+                "borders": ["Burundi", "Democratic Republic of the Congo", "Tanzania", "Uganda"]
+            },
             "Saint Barthélemy": {
-            "name": "Сен-Бартелеми",
+                "name": "Сен-Бартелеми",
                 "capital": "Густавия",
                 "currency": "EUR",
                 "borders": []
-        },
+            },
             "Saint Helena, Ascension and Tristan da Cunha": {
-            "name": "Острова Святой Елены, Вознесения и Тристан-да-Кунья",
+                "name": "Острова Святой Елены, Вознесения и Тристан-да-Кунья",
                 "capital": "Джеймстаун",
                 "currency": "SHP",
                 "borders": []
-        },
+            },
             "Saint Kitts and Nevis": {
-            "name": "Сент-Китс и Невис",
+                "name": "Сент-Китс и Невис",
                 "capital": "Бастер",
                 "currency": "XCD",
                 "borders": []
-        },
+            },
             "Saint Lucia": {
-            "name": "Сент-Люсия",
+                "name": "Сент-Люсия",
                 "capital": "Кастри",
                 "currency": "XCD",
                 "borders": []
-        },
+            },
             "Saint Martin": {
-            "name": "Сен-Мартен",
+                "name": "Сен-Мартен",
                 "capital": "Мариго",
                 "currency": "EUR",
                 "borders": []
-        },
+            },
             "Saint Pierre and Miquelon": {
-            "name": "Сен-Пьер и Микелон",
+                "name": "Сен-Пьер и Микелон",
                 "capital": "Сен-Пьер",
                 "currency": "EUR",
                 "borders": []
-        },
+            },
             "Saint Vincent and the Grenadines": {
-            "name": "Сент-Винсент и Гренадины",
+                "name": "Сент-Винсент и Гренадины",
                 "capital": "Кингстаун",
                 "currency": "XCD",
                 "borders": []
-        },
+            },
             "Samoa": {
-            "name": "Самоа",
+                "name": "Самоа",
                 "capital": "Апиа",
                 "currency": "WST",
                 "borders": []
-        },
+            },
             "San Marino": {
-            "name": "Сан-Марино",
+                "name": "Сан-Марино",
                 "capital": "Сан-Марино",
                 "currency": "EUR",
-                "borders": ["ITA"]
-        },
+                "borders": ["Italy"]
+            },
             "Sao Tome and Principe": {
-            "name": "Сан-Томе и Принсипи",
+                "name": "Сан-Томе и Принсипи",
                 "capital": "Сан-Томе",
                 "currency": "STN",
                 "borders": []
-        },
+            },
             "Saudi Arabia": {
-            "name": "Саудовская Аравия",
+                "name": "Саудовская Аравия",
                 "capital": "Эр-Рияд",
                 "currency": "SAR",
-                "borders": ["IRQ", "JOR", "KWT", "OMN", "QAT", "ARE", "YEM"]
-        },
+                "borders": ["Iraq", "Jordan", "Kuwait", "Oman", "Qatar", "United Arab Emirates", "Yemen"]
+            },
             "Senegal": {
-            "name": "Сенегал",
+                "name": "Сенегал",
                 "capital": "Дакар",
                 "currency": "XOF",
-                "borders": ["GMB", "GIN", "GNB", "MLI", "MRT"]
-        },
+                "borders": ["Gambia", "Guinea", "Guinea-Bissau", "Mali", "Mauritania"]
+            },
             "Serbia": {
-            "name": "Сербия",
+                "name": "Сербия",
                 "capital": "Белград",
                 "currency": "RSD",
-                "borders": ["BIH", "BGR", "HRV", "HUN", "KOS", "MKD", "MNE", "ROU"]
-        },
+                "borders": ["Bosnia and Herzegovina", "Bulgaria", "Croatia", "Hungary", "Kosovo", "North Macedonia", "Montenegro", "Romania"]
+            },
             "Seychelles": {
-            "name": "Сейшельские Острова",
+                "name": "Сейшельские Острова",
                 "capital": "Виктория",
                 "currency": "SCR",
                 "borders": []
-        },
+            },
             "Sierra Leone": {
-            "name": "Сьерра-Леоне",
+                "name": "Сьерра-Леоне",
                 "capital": "Фритаун",
                 "currency": "SLL",
-                "borders": ["GIN", "LBR"]
-        },
+                "borders": ["Guinea", "Liberia"]
+            },
             "Singapore": {
-            "name": "Сингапур",
+                "name": "Сингапур",
                 "capital": "Сингапур",
                 "currency": "SGD",
                 "borders": []
-        },
+            },
             "Sint Maarten": {
-            "name": "Синт-Мартен",
+                "name": "Синт-Мартен",
                 "capital": "Филипсбург",
                 "currency": "ANG",
                 "borders": []
-        },
+            },
             "Slovakia": {
-            "name": "Словакия",
+                "name": "Словакия",
                 "capital": "Братислава",
                 "currency": "EUR",
-                "borders": ["AUT", "CZE", "HUN", "POL", "UKR"]
-        },
+                "borders": ["Austria", "Czech Republic", "Hungary", "Poland", "Ukraine"]
+            },
             "Slovenia": {
-            "name": "Словения",
+                "name": "Словения",
                 "capital": "Любляна",
                 "currency": "EUR",
-                "borders": ["AUT", "HRV", "ITA", "HUN"]
-        },
+                "borders": ["Austria", "Croatia", "Italy", "Hungary"]
+            },
             "Solomon Islands": {
-            "name": "Соломоновы Острова",
+                "name": "Соломоновы Острова",
                 "capital": "Хониара",
                 "currency": "SBD",
                 "borders": []
-        },
+            },
             "Somalia": {
-            "name": "Сомали",
+                "name": "Сомали",
                 "capital": "Могадишо",
                 "currency": "SOS",
-                "borders": ["DJI", "ETH", "KEN"]
-        },
+                "borders": ["Djibouti", "Ethiopia", "Kenya"]
+            },
             "South Africa": {
-            "name": "Южно-Африканская Республика",
+                "name": "Южно-Африканская Республика",
                 "capital": "Претория",
                 "currency": "ZAR",
-                "borders": ["BWA", "LSO", "MOZ", "NAM", "SWZ", "ZWE"]
-        },
+                "borders": ["Botswana", "Lesotho", "Mozambique", "Namibia", "Eswatini", "Zimbabwe"]
+            },
             "South Georgia": {
-            "name": "Южная Георгия",
+                "name": "Южная Георгия",
                 "capital": "Кинг Эдвард Пойнт",
                 "currency": "GBP",
                 "borders": []
-        },
+            },
             "South Korea": {
-            "name": "Южная Корея",
+                "name": "Южная Корея",
                 "capital": "Сеул",
                 "currency": "KRW",
-                "borders": ["PRK"]
-        },
+                "borders": ["North Korea"]
+            },
             "South Sudan": {
-            "name": "Южный Судан",
+                "name": "Южный Судан",
                 "capital": "Джуба",
                 "currency": "SSP",
-                "borders": ["CAF", "COD", "ETH", "KEN", "SDN", "UGA"]
-        },
+                "borders": ["Central African Republic", "Democratic Republic of the Congo", "Ethiopia", "Kenya", "Sudan", "Uganda"]
+            },
             "Spain": {
-            "name": "Испания",
+                "name": "Испания",
                 "capital": "Мадрид",
                 "currency": "EUR",
-                "borders": ["AND", "FRA", "GIB", "PRT", "MAR"]
-        },
+                "borders": ["Andorra", "France", "Gibraltar", "Portugal", "Morocco"]
+            },
             "Sri Lanka": {
-            "name": "Шри-Ланка",
+                "name": "Шри-Ланка",
                 "capital": "Шри-Джаяварденепура-Котте",
                 "currency": "LKR",
                 "borders": []
-        },
+            },
             "Sudan": {
                 "name": "Судан",
                 "capital": "Хартум",
                 "currency": "SDG",
-                "borders": ["CAF", "TCD", "EGY", "ERI", "ETH", "LBY", "SSD"]
+                "borders": ["Central African Republic", "Chad", "Egypt", "Eritrea", "Ethiopia", "Libya", "South Sudan"]
             },
             "Suriname": {
                 "name": "Суринам",
-                    "capital": "Парамарибо",
-                    "currency": "SRD",
-                    "borders": ["BRA", "GUF", "GUY"]
+                "capital": "Парамарибо",
+                "currency": "SRD",
+                "borders": ["Brazil", "French Guiana", "Guyana"]
             },
             "Svalbard and Jan Mayen": {
                 "name": "Шпицберген и Ян-Майен",
-                    "capital": "Лонгйир",
-                    "currency": "NOK",
-                    "borders": []
+                "capital": "Лонгйир",
+                "currency": "NOK",
+                "borders": []
             },
             "Sweden": {
                 "name": "Швеция",
-                    "capital": "Стокгольм",
-                    "currency": "SEK",
-                    "borders": ["FIN", "NOR"]
+                "capital": "Стокгольм",
+                "currency": "SEK",
+                "borders": ["Finland", "Norway"]
             },
             "Switzerland": {
                 "name": "Швейцария",
-                    "capital": "Берн",
-                    "currency": "CHF",
-                    "borders": ["AUT", "FRA", "ITA", "LIE", "DEU"]
+                "capital": "Берн",
+                "currency": "CHF",
+                "borders": ["Austria", "France", "Italy", "Liechtenstein", "Germany"]
             },
             "Syria": {
                 "name": "Сирия",
-                    "capital": "Дамаск",
-                    "currency": "SYP",
-                    "borders": ["IRQ", "ISR", "JOR", "LBN", "TUR"]
+                "capital": "Дамаск",
+                "currency": "SYP",
+                "borders": ["Iraq", "Israel", "Jordan", "Lebanon", "Turkey"]
             },
             "Taiwan": {
                 "name": "Тайвань",
-                    "capital": "Тайбэй",
-                    "currency": "TWD",
-                    "borders": []
+                "capital": "Тайбэй",
+                "currency": "TWD",
+                "borders": []
             },
             "Tajikistan": {
                 "name": "Таджикистан",
-                    "capital": "Душанбе",
-                    "currency": "TJS",
-                    "borders": ["AFG", "CHN", "KGZ", "UZB"]
+                "capital": "Душанбе",
+                "currency": "TJS",
+                "borders": ["Afghanistan", "China", "Kyrgyzstan", "Uzbekistan"]
             },
             "Tanzania": {
                 "name": "Танзания",
-                    "capital": "Додома",
-                    "currency": "TZS",
-                    "borders": ["BDI", "COD", "KEN", "MWI", "MOZ", "RWA", "UGA", "ZMB"]
+                "capital": "Додома",
+                "currency": "TZS",
+                "borders": ["Burundi", "Democratic Republic of the Congo", "Kenya", "Malawi", "Mozambique", "Rwanda", "Uganda", "Zambia"]
             },
             "Thailand": {
                 "name": "Таиланд",
-                    "capital": "Бангкок",
-                    "currency": "THB",
-                    "borders": ["MMR", "KHM", "LAO", "MYS"]
+                "capital": "Бангкок",
+                "currency": "THB",
+                "borders": ["Myanmar", "Cambodia", "Laos", "Malaysia"]
             },
             "Timor-Leste": {
                 "name": "Восточный Тимор",
-                    "capital": "Дили",
-                    "currency": "USD",
-                    "borders": ["IDN"]
+                "capital": "Дили",
+                "currency": "USD",
+                "borders": ["Indonesia"]
             },
             "Togo": {
                 "name": "Того",
-                    "capital": "Ломе",
-                    "currency": "XOF",
-                    "borders": ["BEN", "BFA", "GHA"]
+                "capital": "Ломе",
+                "currency": "XOF",
+                "borders": ["Benin", "Burkina Faso", "Ghana"]
             },
             "Tokelau": {
                 "name": "Токелау",
-                    "capital": "Факаофо",
-                    "currency": "NZD",
-                    "borders": []
+                "capital": "Факаофо",
+                "currency": "NZD",
+                "borders": []
             },
             "Tonga": {
                 "name": "Тонга",
-                    "capital": "Нукуалофа",
-                    "currency": "TOP",
-                    "borders": []
+                "capital": "Нукуалофа",
+                "currency": "TOP",
+                "borders": []
             },
             "Trinidad and Tobago": {
                 "name": "Тринидад и Тобаго",
-                    "capital": "Порт-оф-Спейн",
-                    "currency": "TTD",
-                    "borders": []
+                "capital": "Порт-оф-Спейн",
+                "currency": "TTD",
+                "borders": []
             },
             "Tunisia": {
                 "name": "Тунис",
-                    "capital": "Тунис",
-                    "currency": "TND",
-                    "borders": ["DZA", "LBY"]
+                "capital": "Тунис",
+                "currency": "TND",
+                "borders": ["Algeria", "Libya"]
             },
             "Turkey": {
                 "name": "Турция",
-                    "capital": "Анкара",
-                    "currency": "TRY",
-                    "borders": ["ARM", "AZE", "BGR", "GEO", "GRC", "IRN", "IRQ", "SYR"]
+                "capital": "Анкара",
+                "currency": "TRY",
+                "borders": ["Armenia", "Azerbaijan", "Bulgaria", "Georgia", "Greece", "Iran", "Iraq", "Syria"]
             },
             "Turkmenistan": {
                 "name": "Туркменистан",
-                    "capital": "Ашхабад",
-                    "currency": "TMT",
-                    "borders": ["AFG", "IRN", "KAZ", "UZB"]
+                "capital": "Ашхабад",
+                "currency": "TMT",
+                "borders": ["Afghanistan", "Iran", "Kazakhstan", "Uzbekistan"]
             },
             "Turks and Caicos Islands": {
                 "name": "Теркс и Кайкос",
-                    "capital": "Коберн-Таун",
-                    "currency": "USD",
-                    "borders": []
+                "capital": "Коберн-Таун",
+                "currency": "USD",
+                "borders": []
             },
             "Tuvalu": {
                 "name": "Тувалу",
-                    "capital": "Фунафути",
-                    "currency": "AUD",
-                    "borders": []
+                "capital": "Фунафути",
+                "currency": "AUD",
+                "borders": []
             },
             "Uganda": {
                 "name": "Уганда",
-                    "capital": "Кампала",
-                    "currency": "UGX",
-                    "borders": ["COD", "KEN", "RWA", "SSD", "TZA"]
+                "capital": "Кампала",
+                "currency": "UGX",
+                "borders": ["Democratic Republic of the Congo", "Kenya", "Rwanda", "South Sudan", "Tanzania"]
             },
             "Ukraine": {
                 "name": "Украина",
-                    "capital": "Киев",
-                    "currency": "UAH",
-                    "borders": ["BLR", "HUN", "MDA", "POL", "ROU", "RUS", "SVK"]
+                "capital": "Киев",
+                "currency": "UAH",
+                "borders": ["Belarus", "Hungary", "Moldova", "Poland", "Romania", "Russia", "Slovakia"]
             },
             "United Arab Emirates": {
                 "name": "Объединенные Арабские Эмираты",
-                    "capital": "Абу-Даби",
-                    "currency": "AED",
-                    "borders": ["OMN", "SAU"]
+                "capital": "Абу-Даби",
+                "currency": "AED",
+                "borders": ["Oman", "Saudi Arabia"]
             },
             "United Kingdom": {
                 "name": "Великобритания",
-                    "capital": "Лондон",
-                    "currency": "GBP",
-                    "borders": []
+                "capital": "Лондон",
+                "currency": "GBP",
+                "borders": []
             },
             "United States": {
                 "name": "Соединенные Штаты Америки",
-                    "capital": "Вашингтон",
-                    "currency": "USD",
-                    "borders": ["CAN", "MEX"]
+                "capital": "Вашингтон",
+                "currency": "USD",
+                "borders": ["Canada", "Mexico"]
             },
             "United States Minor Outlying Islands": {
                 "name": "Внешние малые острова США",
-                    "capital": "",
-                    "currency": "USD",
-                    "borders": []
+                "capital": "",
+                "currency": "USD",
+                "borders": []
             },
             "United States Virgin Islands": {
                 "name": "Виргинские Острова США",
-                    "capital": "Шарлотта-Амалия",
-                    "currency": "USD",
-                    "borders": []
+                "capital": "Шарлотта-Амалия",
+                "currency": "USD",
+                "borders": []
             },
             "Uruguay": {
                 "name": "Уругвай",
-                    "capital": "Монтевидео",
-                    "currency": "UYU",
-                    "borders": ["ARG", "BRA"]
+                "capital": "Монтевидео",
+                "currency": "UYU",
+                "borders": ["Argentina", "Brazil"]
             },
             "Uzbekistan": {
                 "name": "Узбекистан",
-                    "capital": "Ташкент",
-                    "currency": "UZS",
-                    "borders": ["AFG", "KAZ", "KGZ", "TJK", "TKM"]
+                "capital": "Ташкент",
+                "currency": "UZS",
+                "borders": ["Afghanistan", "Kazakhstan", "Kyrgyzstan", "Tajikistan", "Turkmenistan"]
             },
             "Vanuatu": {
                 "name": "Вануату",
-                    "capital": "Порт-Вила",
-                    "currency": "VUV",
-                    "borders": []
+                "capital": "Порт-Вила",
+                "currency": "VUV",
+                "borders": []
             },
             "Vatican City": {
                 "name": "Ватикан",
-                    "capital": "Ватикан",
-                    "currency": "EUR",
-                    "borders": ["ITA"]
+                "capital": "Ватикан",
+                "currency": "EUR",
+                "borders": ["Italy"]
             },
             "Venezuela": {
                 "name": "Венесуэла",
-                    "capital": "Каракас",
-                    "currency": "VES",
-                    "borders": ["BRA", "COL", "GUY"]
+                "capital": "Каракас",
+                "currency": "VES",
+                "borders": ["Brazil", "Colombia", "Guyana"]
             },
             "Vietnam": {
                 "name": "Вьетнам",
-                    "capital": "Ханой",
-                    "currency": "VND",
-                    "borders": ["KHM", "CHN", "LAO"]
+                "capital": "Ханой",
+                "currency": "VND",
+                "borders": ["Cambodia", "China", "Laos"]
             },
             "Wallis and Futuna": {
                 "name": "Уоллис и Футуна",
-                    "capital": "Мата-Уту",
-                    "currency": "XPF",
-                    "borders": []
+                "capital": "Мата-Уту",
+                "currency": "XPF",
+                "borders": []
             },
             "Western Sahara": {
                 "name": "Западная Сахара",
-                    "capital": "Эль-Аюн",
-                    "currency": "MAD",
-                    "borders": ["DZA", "MRT", "MAR"]
+                "capital": "Эль-Аюн",
+                "currency": "MAD",
+                "borders": ["Algeria", "Mauritania", "Morocco"]
             },
             "Yemen": {
                 "name": "Йемен",
-                    "capital": "Сана",
-                    "currency": "YER",
-                    "borders": ["OMN", "SAU"]
+                "capital": "Сана",
+                "currency": "YER",
+                "borders": ["Oman", "Saudi Arabia"]
             },
             "Zimbabwe": {
                 "name": "Зимбабве",
-                    "capital": "Хараре",
-                    "currency": "ZWL",
-                    "borders": ["BWA", "MOZ", "ZAF", "ZMB"]
+                "capital": "Хараре",
+                "currency": "ZWL",
+                "borders": ["Botswana", "Mozambique", "South Africa", "Zambia"]
             }
         };
 
         if (countryName) {
             fetch(`https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}`)
-                .then(response => response.json())
-                .then(data => {
-                    const country = data[0];
-                    const countryDetails = document.getElementById('country-details');
-                    const translatedName = translations[country.name.common]?.name || country.name.common;
-                    const translatedCapital = translations[country.name.common]?.capital || (country.capital ? country.capital[0] : 'N/A');
+    .then(response => response.json())
+            .then(data => {
+                const country = data[0];
+                const countryDetails = document.getElementById('country-details');
+                const translatedName = translations[country.name.common]?.name || country.name.common;
+                const translatedCapital = translations[country.name.common]?.capital || (country.capital ? country.capital[0] : 'N/A');
 
-                    document.getElementById('country-name').textContent = translatedName;
+                document.getElementById('country-name').textContent = translatedName;
 
-                    const capital = document.createElement('p');
-                    capital.textContent = `Столица: ${translatedCapital}`;
-                    countryDetails.appendChild(capital);
+                const capital = document.createElement('p');
+                capital.textContent = `Столица: ${translatedCapital}`;
+                countryDetails.appendChild(capital);
 
-                    const currency = document.createElement('p');
-                    const currencyCode = country.currencies ? Object.keys(country.currencies)[0] : 'N/A';
-                    currency.textContent = `Код валюты: ${currencyCode}`;
-                    countryDetails.appendChild(currency);
+                const currency = document.createElement('p');
+                const currencyCode = country.currencies ? Object.keys(country.currencies)[0] : 'N/A';
+                currency.textContent = `Код валюты: ${currencyCode}`;
+                countryDetails.appendChild(currency);
 
-                    const borders = document.createElement('p');
-                    borders.textContent = 'Граничащие страны:';
-                    countryDetails.appendChild(borders);
+                const borders = document.createElement('p');
+                borders.textContent = 'Граничащие страны:';
+                countryDetails.appendChild(borders);
 
-                    if (country.borders && country.borders.length > 0) {
-                        const borderList = document.createElement('ul');
-                        country.borders.forEach(border => {
-                            const borderItem = document.createElement('li');
-                            borderItem.textContent = border;
-                            borderList.appendChild(borderItem);
-                        });
-                        countryDetails.appendChild(borderList);
-                    } else {
-                        const noBorders = document.createElement('p');
-                        noBorders.textContent = 'Нет граничащих стран.';
-                        countryDetails.appendChild(noBorders);
-                    }
-                })
-                .catch(error => console.error('Error fetching country details:', error));
-        } else {
+                if (country.borders && country.borders.length > 0) {
+                    const borderList = document.createElement('ul');
+                    borderList.className = 'borders-list';
+                    country.borders.forEach(border => {
+                        const borderItem = document.createElement('li');
+                        const borderButton = document.createElement('button');
+                        borderButton.className = 'border-button';
+                        const borderCountryName = Object.keys(translations).find(key => translations[key].borders.includes(border));
+                        borderButton.textContent = translations[borderCountryName]?.name || border;
+                        borderButton.onclick = () => {
+                            window.location.href = `country.html?name=${borderCountryName}`;
+                        };
+                        borderItem.appendChild(borderButton);
+                        borderList.appendChild(borderItem);
+                    });
+                    countryDetails.appendChild(borderList);
+                } else {
+                    const noBorders = document.createElement('p');
+                    noBorders.textContent = 'Нет граничащих стран.';
+                    countryDetails.appendChild(noBorders);
+                }
+            })
+            .catch(error => console.error('Error fetching country details:', error));
+    } else {
             document.getElementById('country-details').textContent = 'Страна не указана.';
         }
     });
