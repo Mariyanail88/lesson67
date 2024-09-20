@@ -56,6 +56,7 @@
 </div>
 
 <script>
+
     document.addEventListener('DOMContentLoaded', function() {
         const urlParams = new URLSearchParams(window.location.search);
         const countryName = urlParams.get('name');
@@ -796,14 +797,21 @@
                         const borderItem = document.createElement('li');
                         const borderButton = document.createElement('button');
                         borderButton.className = 'border-button';
-                        const borderCountryName = Object.keys(translations).find(key => translations[key].borders.includes(border));
-                        borderButton.textContent = translations[borderCountryName]?.name || border;
+
+                        // Fallback to the border code if the translation doesn't exist
+                        const borderCountryName = Object.keys(translations).find(key => translations[key].borders.includes(border)) || border;
+
+                        borderButton.textContent = translations[borderCountryName]?.name || borderCountryName;
+
+                        // Update the onclick to use the correct name or code
                         borderButton.onclick = () => {
-                            window.location.href = `country.html?name=${borderCountryName}`;
+                            window.location.href = `country.html?name=${encodeURIComponent(borderCountryName)}`;
                         };
+
                         borderItem.appendChild(borderButton);
                         borderList.appendChild(borderItem);
                     });
+
                     countryDetails.appendChild(borderList);
                 } else {
                     const noBorders = document.createElement('p');

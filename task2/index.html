@@ -73,8 +73,9 @@
                     button.className = 'country-button';
                     button.textContent = country.name.common;
                     button.onclick = () => {
-                        window.location.href = `/task2/country.html?name=${encodeURIComponent(country.name.common)}`;
+                        window.location.href = `country.html?name=${encodeURIComponent(country.name.common)}`;
                     };
+
                     listItem.appendChild(button);
                     countryList.appendChild(listItem);
                 });
