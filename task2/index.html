@@ -1,3 +1,86 @@
-let urlParams = new URLSearchParams(window.location.search);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .country-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0;
+            list-style-type: none;
+        }
+        .country-list li {
+            flex: 1 1 calc(20% - 10px); /* 5 кнопок в строке с учетом отступов */
+            box-sizing: border-box;
+        }
+        .country-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #d3d3d3;
+            border: none;
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        @media (max-width: 1200px) {
+            .country-list li {
+                flex: 1 1 calc(25% - 10px); /* 4 кнопки в строке */
+            }
+        }
+        @media (max-width: 900px) {
+            .country-list li {
+                flex: 1 1 calc(33.33% - 10px); /* 3 кнопки в строке */
+            }
+        }
+        @media (max-width: 600px) {
+            .country-list li {
+                flex: 1 1 calc(50% - 10px); /* 2 кнопки в строке */
+            }
+        }
+        @media (max-width: 400px) {
+            .country-list li {
+                flex: 1 1 100%; /* 1 кнопка в строке */
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>List of Countries</h1>
+<ul class="country-list" id="country-list"></ul>
 
-let param = urlParams.get('paramName');
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('https://restcountries.com/v3.1/all')
+            .then(response => response.json())
+            .then(data => {
+                // Сортируем страны в алфавитном порядке
+                data.sort((a, b) => a.name.common.localeCompare(b.name.common));
+
+                const countryList = document.getElementById('country-list');
+                data.forEach(country => {
+                    const listItem = document.createElement('li');
+                    const button = document.createElement('button');
+                    button.className = 'country-button';
+                    button.textContent = country.name.common;
+                    button.onclick = () => {
+                        window.location.href = `/task2/country.html?name=${encodeURIComponent(country.name.common)}`;
+                    };
+                    listItem.appendChild(button);
+                    countryList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error fetching countries:', error));
+    });
+</script>
+</body>
+</html>
