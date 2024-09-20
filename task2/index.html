@@ -18,7 +18,7 @@
             list-style-type: none;
         }
         .country-list li {
-            flex: 1 1 calc(20% - 10px); /* 5 кнопок в строке с учетом отступов */
+            flex: 1 1 calc(20% - 10px);
             box-sizing: border-box;
         }
         .country-button {
@@ -34,22 +34,22 @@
         }
         @media (max-width: 1200px) {
             .country-list li {
-                flex: 1 1 calc(25% - 10px); /* 4 кнопки в строке */
+                flex: 1 1 calc(25% - 10px);
             }
         }
         @media (max-width: 900px) {
             .country-list li {
-                flex: 1 1 calc(33.33% - 10px); /* 3 кнопки в строке */
+                flex: 1 1 calc(33.33% - 10px);
             }
         }
         @media (max-width: 600px) {
             .country-list li {
-                flex: 1 1 calc(50% - 10px); /* 2 кнопки в строке */
+                flex: 1 1 calc(50% - 10px);
             }
         }
         @media (max-width: 400px) {
             .country-list li {
-                flex: 1 1 100%; /* 1 кнопка в строке */
+                flex: 1 1 100%;
             }
         }
     </style>
@@ -63,7 +63,7 @@
         fetch('https://restcountries.com/v3.1/all')
             .then(response => response.json())
             .then(data => {
-                // Сортируем страны в алфавитном порядке
+
                 data.sort((a, b) => a.name.common.localeCompare(b.name.common));
 
                 const countryList = document.getElementById('country-list');
